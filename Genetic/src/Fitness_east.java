@@ -1,8 +1,10 @@
-import java.util.*;
-public class Fitness {
+import java.util.ArrayList;
+import java.util.Vector;
+
+public class Fitness_east {
 
 	
-	public int calculate(int [][] element, int speed,int s2, int s3, int s4, double rotor_radius){
+public int calculate(int [][] element, int speed, double rotor_radius){
 		
 		int count=0;
 		int Ut=0;
@@ -16,10 +18,7 @@ public class Fitness {
 		double[] a;
 		double grand_total=0;
 		int fitness=0;
-		int fitness2=0;
-		int fitness3=0;
-		int fitness4=0;
-		int fitness_final=0;
+		
 		
 		
 		ArrayList speeds=new ArrayList();
@@ -37,14 +36,14 @@ public class Fitness {
 			value=false;
 			count=0;
 			
-			for(int j=0;j<10;j++){
+			for(int j=9;j>=0;j--){
 				
 				
 				if(element[i][j]==5)
 				{
 					
 					
-				if(j==0||value==false)
+				if(j==9||value==false)
 				{
 					
 						
@@ -62,7 +61,7 @@ public class Fitness {
 				if(count==1)
 				{
 					
-					r1=rotor_radius+0.1*((j-v)*10*rotor_radius);
+					r1=rotor_radius+0.1*((v-j)*10*rotor_radius);
 					
 					radius_component= (double)(rotor_radius/r1);
 					
@@ -143,16 +142,10 @@ public class Fitness {
 		//System.out.println(fitness);
 		
 		Fitness_south f2= new Fitness_south();
-		fitness2=f2.calculate(element, s2, 40);
+		f2.calculate(element, 10, 40);
 		
-		Fitness_east f3= new Fitness_east();
-		fitness3=f3.calculate(element, s3, 40);
 		
-		Fitness_north f4= new Fitness_north();
-		fitness4=f4.calculate(element, s4, 40);
+		return fitness;
 		
-		fitness_final= (fitness+fitness2+fitness3+fitness4)/4;
-		
-		return fitness_final;
 	}
 }

@@ -47,10 +47,10 @@ public class Sketch {
 		 for (int j=0;j<generation.size();j++)
 		 {
 			 e=(int[][])generation.get(j);
-			 fitness=f.calculate(e, 20, 40);
+			 fitness=f.calculate(e, 20,18,15,10,40);
 			 sum=sum+fitness;
 		 }
-		 if(sum==1000)
+		 if(sum>995)
 			 optimum=true;
 		 
 		 sum=0;
@@ -80,8 +80,12 @@ public class Sketch {
 		
 		
 		//System.out.println(a.size());
-		
-		
+
+        /*DNA d=new DNA();
+        d.generateIndividual();
+        e=(int[][])d.getGene(); */
+        
+        
 		for(int i = 0; i<10; i++)
 		{
 		    for(int j = 0; j<10; j++)
@@ -91,6 +95,9 @@ public class Sketch {
 		    }
 		    System.out.println();
 		}
+		
+	    
+		
 		
 		
 	}

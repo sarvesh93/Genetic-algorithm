@@ -15,7 +15,7 @@ public class Pool {
 		for(int i=0;i<a.size();i++)
 		{
 			e=(int[][])a.get(i);
-			fitness=f.calculate(e, 20, 40);
+			fitness=f.calculate(e, 20,18,15,10, 40);
 			sum=sum+fitness;
 			//System.out.println(fitness);
 			
