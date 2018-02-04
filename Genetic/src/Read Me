@@ -1,0 +1,2 @@
+This is an implementation of a genetic algorithm for optimizing the a wind farm layout taking
+into consideration different wind speeds, directions and probabilities. 
